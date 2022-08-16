@@ -2,8 +2,8 @@
 
 ## What is OLCM?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+Online Community Literacy Mapping allows local government units to gather and measure the literacy of
+their constituents as basis to further implement alternative learning system effectively. 
 
 This repository holds a composer-installable app starter.
 It has been built from the
