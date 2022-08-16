@@ -1,0 +1,238 @@
+
+<form>
+                <?php if (!empty($oscya_info) && is_array($oscya_info)): ?>
+                        <input type="hidden" name="oscya_id" id = "oscya_id" value="<?=$oscya_info['oscya_id']?>">
+                        <div class="mb-3">
+                            <label class="form-label" for="id">Record ID:</label>
+                            <input type="text" name="id" id="id" class="form-control" value="<?=$oscya_info['id'];?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="oid">Oscya ID:</label>
+                            <input type="text" name="oscya_id" id="oscya_id" class="form-control" value="<?=$oscya_info['oscya_id'];?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="lastname">Lastname:</label>
+                            <input type="text" name="lastname" id="lastname" class="form-control" value="<?=$oscya_info['lastname']?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="firstname">Firstname:</label>
+                            <input type="text" name="firstname" id="firstname" class="form-control" value="<?=$oscya_info['firstname']?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="middlename">Middlename:</label>
+                            <input type="text" name="middlename" id="middlename" class="form-control" value="<?=$oscya_info['middlename']?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="extension">Extension:</label>
+                            <input type="text" name="extension" id="extension" class="form-control" value="<?=$oscya_info['extension']?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="birthdate">Birthdate:</label>
+                            <input type="date" name="birthdate" id="birthdate" class="form-control" value="<?=$oscya_info['birthdate']?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="gender">Gender:</label>
+                            <input type="text" name="gender" id="gender" class="form-control" value="<?=$oscya_info['gender']?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="civil_status">Civil Status:</label>
+                            <input type="text" name="civil_status" id="civil_status" class="form-control" value="<?=$oscya_info['civil_status']?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="religion">Religion:</label>
+                            <input type="text" name="religion" id="religion" class="form-control" value="<?=$oscya_info['religion']?>" readonly>
+                        </div>
+                        <div class="mb-3">
+
+                            <button type="submit" class = "btn btn-success">Save</button>
+                        </div>
+                    <?php else: ?>
+                    <?php endif ?>
+                <?php if (!empty($oscya_info) && is_array($oscya_info)): ?>
+                    <input type="hidden" name="oscya_id" id = "oscya_id" value="<?=$oscya_info['oscya_id']?>">
+                    <div class="mb-3">
+                        <label class="form-label" for="id">Record ID:</label>
+                        <input type="text" name="id" id="id" class="form-control" value="<?=$oscya_info['id'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="oid">Oscya ID:</label>
+                        <input type="text" name="oscya_id" id="oscya_id" class="form-control" value="<?=$oscya_info['oscya_id'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="lastname">Lastname:</label>
+                        <input type="text" name="lastname" id="lastname" class="form-control" value="<?=$oscya_info['lastname']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="firstname">Firstname:</label>
+                        <input type="text" name="firstname" id="firstname" class="form-control" value="<?=$oscya_info['firstname']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="middlename">Middlename:</label>
+                        <input type="text" name="middlename" id="middlename" class="form-control" value="<?=$oscya_info['middlename']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="extension">Extension:</label>
+                        <input type="text" name="extension" id="extension" class="form-control" value="<?=$oscya_info['extension']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="birthdate">Birthdate:</label>
+                        <input type="date" name="birthdate" id="birthdate" class="form-control" value="<?=$oscya_info['birthdate']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="gender">Gender:</label>
+                        <input type="text" name="gender" id="gender" class="form-control" value="<?=$oscya_info['gender']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="civil_status">Civil Status:</label>
+                        <input type="text" name="civil_status" id="civil_status" class="form-control" value="<?=$oscya_info['civil_status']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="religion">Religion:</label>
+                        <input type="text" name="religion" id="religion" class="form-control" value="<?=$oscya_info['religion']?>" readonly>
+                    </div>
+                <?php else: ?>
+                    
+                <?php endif ?>
+
+                <?php if (!empty($oscya_contact) && is_array($oscya_contact)): ?>
+                    <div class="mb-3">
+                        <label class="form-label" for="email">Email</label>
+                        <input type="text" name="email" id="email" class="form-control" value="<?=$oscya_contact['email'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="contact">Email</label>
+                        <input type="text" name="contact" id="contact" class="form-control" value="<?=$oscya_contact['contact'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="facebook">Facebook</label>
+                        <input type="text" name="facebook" id="facebook" class="form-control" value="<?=$oscya_contact['facebook'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="street">Street/Building</label>
+                        <input type="text" name="street" id="street" class="form-control" value="<?=$oscya_contact['street'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="brgy">Barangay</label>
+                        <input type="text" name="brgy" id="brgy" class="form-control" value="<?=$oscya_contact['brgy'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="district">District</label>
+                        <input type="text" name="district" id="district" class="form-control" value="<?=$oscya_contact['district'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="city">City</label>
+                        <input type="text" name="city" id="city" class="form-control" value="<?=$oscya_contact['city'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="state">State</label>
+                        <input type="text" name="state" id="state" class="form-control" value="<?=$oscya_contact['state'];?>" readonly>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label" for="zip_code">Zip Code</label>
+                        <input type="text" name="zip_code" id="zip_code" class="form-control" value="<?=$oscya_contact['zip_code'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="p_street">Permanent Street/Building</label>
+                        <input type="text" name="p_street" id="p_street" class="form-control" value="<?=$oscya_contact['p_street'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="p_barangay">Permanent Barangay</label>
+                        <input type="text" name="p_barangay" id="p_barangay" class="form-control" value="<?=$oscya_contact['p_barangay'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="p_district">Permanent District</label>
+                        <input type="text" name="p_district" id="p_district" class="form-control" value="<?=$oscya_contact['p_district'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="p_city">Permanent City</label>
+                        <input type="text" name="p_city" id="p_city" class="form-control" value="<?=$oscya_contact['p_city'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="pstate">Permanent State</label>
+                        <input type="text" name="p_state" id="p_state" class="form-control" value="<?=$oscya_contact['p_state'];?>" readonly>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label" for="p_zip_code">Permanent Zip Code</label>
+                        <input type="text" name="p_zip_code" id="p_zip_code" class="form-control" value="<?=$oscya_contact['p_zip_code'];?>" readonly>
+                    </div>
+                <?php else: ?>
+                    
+                <?php endif ?>
+
+                <?php if (!empty($oscya_guardian) && is_array($oscya_guardian)): ?>
+                    <div class="mb-3">
+                        <label class="form-label" for="gfullname">Guardian's Fullname:</label>
+                        <input type="text" name="gfullname" id="gfullname" class="form-control" value="<?=$oscya_guardian['fullname'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="gemail">Guardian's Email:</label>
+                        <input type="text" name="gemail" id="gemail" class="form-control" value="<?=$oscya_guardian['email'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="gcontact">Guardian's Contact:</label>
+                        <input type="text" name="gcontact" id="gcontact" class="form-control" value="<?=$oscya_guardian['contact'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="gfacebook">Guardian's Contact:</label>
+                        <input type="text" name="gfacebook" id="gfacebook" class="form-control" value="<?=$oscya_guardian['facebook'];?>" readonly>
+                    </div>
+                <?php else: ?>
+                    
+                <?php endif ?>
+
+                <?php if (!empty($oscya_mapping) && is_array($oscya_mapping)): ?>
+                    <div class="mb-3">
+                        <label class="form-label" for="educ_attainment">Highest Educational Attainment:</label>
+                        <input type="text" name="educ_attainment" id="educ_attainment" class="form-control" value="<?=$oscya_mapping['educ_attainment'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="reason">Reason:</label>
+                        <input type="text" name="reason" id="reason" class="form-control" value="<?=$oscya_mapping['reason'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="other_reason">Other Reason:</label>
+                        <textarea type="text" name="other_reason" id="other_reason" class="form-control" value="<?=$oscya_mapping['other_reason'];?>" readonly></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="is_pwd">Are you belong to PWD?:</label>
+                        <input type="text" name="is_pwd" id="is_pwd" class="form-control" value="<?=$oscya_mapping['is_pwd'] == 1 ? 'Yes' : 'No';?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="has_pwd_id">Disability:</label>
+                        <input type="text" name="has_pwd_id" id="has_pwd_id" class="form-control" value="<?=$oscya_mapping['has_pwd_id'] == 1 ? 'Yes' : 'No';?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="reason">Disability:</label>
+                        <input type="text" name="disability" id="disability" class="form-control" value="<?=$oscya_mapping['disability'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="other_disability">Other Disability:</label>
+                        <input type="text" name="other_disability" id="other_disability" class="form-control" value="<?=$oscya_mapping['other_disability'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="disease">Disease:</label>
+                        <input type="text" name="disease" id="disease" class="form-control" value="<?=$oscya_mapping['disease'];?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="is_employed">Employment Status:</label>
+                        <input type="text" name="is_employed" id="is_employed" class="form-control" value="<?=$oscya_mapping['is_employed'] == 1 ? 'Employed' : 'Not Employed';?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="is_fps_member">4ps membership status:</label>
+                        <input type="text" name="is_fps_member" id="is_fps_member" class="form-control" value="<?=$oscya_mapping['is_fps_member'] == 1 ? 'Member' : 'Not a Member';?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="is_interested">DepEd Program Interest:</label>
+                        <input type="text" name="is_interested" id="is_interested" class="form-control" value="<?=$oscya_mapping['is_interested'] == 1 ? 'Interested' : 'Not Interested';?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="mapping_date">DepEd Program Interest:</label>
+                        <input type="date" name="mapping_date" id="mapping_date" class="form-control" value="<?=$oscya_mapping['mapping_date'];?>" readonly>
+                    </div>
+                    
+                <?php else: ?>
+                    
+                <?php endif ?>
+            </form>

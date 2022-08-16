@@ -1,0 +1,37 @@
+body {
+    font-family: 'Libre Franklin', sans-serif;
+}
+form {
+    padding: 1.5rem;
+}
+.login-input {
+    border: 1px solid lightgray;
+    padding: 10px 14px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    /* box-shadow: 0 0 3px lightgray; */
+    outline: none;
+}
+.login-input:hover {
+    /* box-shadow: 0 0 10px inset #efefef; */
+    outline: 4px solid rgba(17, 102, 182, 0.25);
+    border: 1px solid var(--bs-blue-3);
+}
+.login-btn:active {
+    color: var(--bs-teal);
+}
+.login-btn {
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    padding: 12px 16px;
+    background-color: #008000c5;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 3px lightgray;
+}
+.login-btn:hover {
+    outline: 4px solid #20c99665;
+    border: 1px solid var(--bs-teal);
+}

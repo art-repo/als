@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 p-3">
+            <h1><?=$title?></h1>
+            
+            <?php if (! empty($staff) && is_array($staff)): ?>
+                &laquo; <a href="<?=base_url('coordinator/staff')?>" class="text-success">
+                    Go back
+                </a>
+                <?php 
+                    if(isset($message)){
+                        ?>
+                            <p class="text-dark"><?=$message?></p>
+                        <?php
+                    }
+                ?>
+                <form action="<?=base_url('coordinator/save_changes')?>" method="post">
+                    <?=csrf_field()?>
+                    <div class="mb-3">
+                        <label for="id">Record ID: </label>
+                        <input type="text" name="id" id="id" class="form-control" value = "<?=$staff['id']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id">User ID: </label>
+                        <input type="text" name="user_id" id="user_id" class="form-control" value = "<?=$staff['user_id']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id">Creator ID: </label>
+                        <input type="text" name="creator_id" id="creator_id" class="form-control" value = "<?=$staff['creator_id']?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id">Username: </label>
+                        <input type="text" name="username" id="username" class="form-control" value = "<?=$staff['username']?>" readonly>
+                        <small id="usnErr" class="text-danger"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id">Password: </label>
+                        <input type="password" name="password" id="password" class="form-control" value = "<?=$staff['password']?>" readonly>
+                        <small id="passErr" class="text-danger"></small>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="showPass">
+                        <label class="form-check-label" for="showPass">
+                            Show Password
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <br>
+                        <button type='button' class="btn btn-warning" id = "enableEdit">Edit</button>
+                        <button type='button' class="btn btn-secondary" id = "cancelEdit">Cancel</button>
+                        <button type = "submit" class="btn btn-success" id = "submit" disabled>Save Changes</button>
+                    </div>
+                </form>
+            <?php else: ?>
+                <div class="alert alert-info">No Such Account Exist</div>
+            <?php endif ?>
+        </div>
+    </div>
+</div>
+
+<script>
+        const staffAccForm = document.querySelector('#staffAccForm');
+        const showPass = document.querySelector('#showPass');
+        const enableEdit = document.querySelector('#enableEdit');
+        const cancelEdit = document.querySelector('#cancelEdit');
+        const submitBtn = document.querySelector('#submit');
+
+        const usn = document.querySelector('#username');
+        const pass = document.querySelector('#password');
+        const usnErr = document.querySelector('#usnErr');
+        const passErr = document.querySelector('#passErr');
+
+        showPass.addEventListener('change', ()=>{
+            if (showPass.checked == true) {
+                pass.type = "text";
+            } else {
+                pass.type = "password";
+            }
+        });
+        
+        enableEdit.addEventListener('click', ()=>{
+            usn.readOnly = false;
+            pass.readOnly = false;
+            submitBtn.disabled = false;
+        });
+
+        cancelEdit.addEventListener('click', () => {
+            usn.readOnly = true;
+            pass.readOnly = true;
+            submitBtn.disabled = true;
+        });
+
+</script>

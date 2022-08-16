@@ -1,0 +1,31 @@
+//custom
+
+@import '../vendor/twbs/bootstrap/scss/_functions';
+@import '../vendor/twbs/bootstrap/scss/_variables';
+$primary: #1164b4;
+$custom-theme-colors: (
+    'green-1': #8dd8cc,
+    'green-2': #0dad8d,
+    'green-3': #064e40,
+    'blue-1': #30bfbf,
+    'blue-2': #0c98ba,
+    'blue-3': #1164b4,
+    'red-1': #f9e9e7,
+    'red-2': #f2d3ce,
+    'red-3': #ecbcb6,
+    'red-4': #e5a69e,
+    'red-6': #df9086,
+    'red-7': #d97a6d,
+    'red-8': #d26455,
+    'red-9': #cc4d3d,
+    'red-10': #c53724,
+    'red-11': #bf210c,
+    'primary-2': #096aed,
+    'info-2': #088ddf,
+    'success-2': #11bac5,
+    'success-3': #19dcb7,
+    'warning-2': #fdd849,
+    'danger-2': #f22f57,
+);
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+@import '../vendor/twbs/bootstrap/scss/bootstrap';
