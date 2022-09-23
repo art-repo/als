@@ -25,7 +25,7 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insertOscyaDetails` (IN `oid` VARCHAR(20), IN `uid` VARCHAR(20), IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `mn` VARCHAR(30), IN `ext` VARCHAR(10), IN `fname` VARCHAR(255), IN `bd` DATE, IN `age` INT(11), IN `sex` VARCHAR(10), IN `cs` VARCHAR(10), IN `rel` VARCHAR(50), IN `eml` VARCHAR(50), IN `cpnum` VARCHAR(16), IN `fb` VARCHAR(50), IN `st` VARCHAR(255), IN `br` VARCHAR(255), IN `dist` VARCHAR(15), IN `ct` VARCHAR(50), IN `stt` VARCHAR(50), IN `zc` VARCHAR(15), IN `pst` VARCHAR(255), IN `pbr` VARCHAR(255), IN `pdist` VARCHAR(15), IN `pct` VARCHAR(50), IN `pstt` VARCHAR(50), IN `pzc` VARCHAR(15), IN `gflln` VARCHAR(60), IN `geml` VARCHAR(50), IN `gcp` VARCHAR(16), IN `gf` VARCHAR(50), IN `educ` VARCHAR(255), IN `rs` TEXT, IN `ors` TEXT, IN `dsa` TEXT, IN `ipwd` TINYINT(1), IN `hpwdid` TINYINT(1), IN `odsa` TEXT, IN `dss` TEXT, IN `isemp` TINYINT(1), IN `isfps` TINYINT(1), IN `isin` TINYINT(1), IN `mppdate` DATE)  BEGIN
+CREATE  PROCEDURE `insertOscyaDetails` (IN `oid` VARCHAR(20), IN `uid` VARCHAR(20), IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `mn` VARCHAR(30), IN `ext` VARCHAR(10), IN `fname` VARCHAR(255), IN `bd` DATE, IN `age` INT(11), IN `sex` VARCHAR(10), IN `cs` VARCHAR(10), IN `rel` VARCHAR(50), IN `eml` VARCHAR(50), IN `cpnum` VARCHAR(16), IN `fb` VARCHAR(50), IN `st` VARCHAR(255), IN `br` VARCHAR(255), IN `dist` VARCHAR(15), IN `ct` VARCHAR(50), IN `stt` VARCHAR(50), IN `zc` VARCHAR(15), IN `pst` VARCHAR(255), IN `pbr` VARCHAR(255), IN `pdist` VARCHAR(15), IN `pct` VARCHAR(50), IN `pstt` VARCHAR(50), IN `pzc` VARCHAR(15), IN `gflln` VARCHAR(60), IN `geml` VARCHAR(50), IN `gcp` VARCHAR(16), IN `gf` VARCHAR(50), IN `educ` VARCHAR(255), IN `rs` TEXT, IN `ors` TEXT, IN `dsa` TEXT, IN `ipwd` TINYINT(1), IN `hpwdid` TINYINT(1), IN `odsa` TEXT, IN `dss` TEXT, IN `isemp` TINYINT(1), IN `isfps` TINYINT(1), IN `isin` TINYINT(1), IN `mppdate` DATE)  BEGIN
         	START TRANSACTION;
                 
                 INSERT INTO `oscya_info`(`oscya_id`, `lastname`, `firstname`, `middlename`, `extension`, `fullname`,`birthdate`, `age`, `gender`, `civil_status`, `religion`) VALUES ( oid, ln, fn, mn, ext, fname, bd, age, sex, cs, rel);
@@ -44,7 +44,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insertOscyaDetails` (IN `oid` VARCH
                 COMMIT;
             END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insertStaff` (IN `uid` VARCHAR(20), IN `cid` VARCHAR(20), IN `usn` VARCHAR(20), IN `pass` VARCHAR(300), IN `eml` VARCHAR(50), IN `act_code` VARCHAR(10), IN `utype` VARCHAR(50), IN `imagePath` BLOB, IN `barangay` TEXT)  BEGIN
+CREATE  PROCEDURE `insertStaff` (IN `uid` VARCHAR(20), IN `cid` VARCHAR(20), IN `usn` VARCHAR(20), IN `pass` VARCHAR(300), IN `eml` VARCHAR(50), IN `act_code` VARCHAR(10), IN `utype` VARCHAR(50), IN `imagePath` BLOB, IN `barangay` TEXT)  BEGIN
          START TRANSACTION;
 			INSERT INTO `user`(`user_id`, `creator_id`, `username`, `password`, `activation_code`, `user_type`) 
 			VALUES ( uid, cid, usn, pass, act_code, utype);
@@ -55,7 +55,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insertStaff` (IN `uid` VARCHAR(20),
 		COMMIT;
     END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_als_coord` (IN `acid` VARCHAR(250), IN `act_code` VARCHAR(250), IN `dist` INT, IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `eml` VARCHAR(50), IN `usn` VARCHAR(50), IN `pass` VARCHAR(300), IN `id_loc` TEXT)  BEGIN
+CREATE  PROCEDURE `insert_als_coord` (IN `acid` VARCHAR(250), IN `act_code` VARCHAR(250), IN `dist` INT, IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `eml` VARCHAR(50), IN `usn` VARCHAR(50), IN `pass` VARCHAR(300), IN `id_loc` TEXT)  BEGIN
         START TRANSACTION;
 			INSERT INTO `als_coordinator`(`user_id`, `is_evaluated`,`activation_code`, `isActivated`,`email`, `is_email_activated`, `username`, `password`) 
             VALUES 
@@ -66,7 +66,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_als_coord` (IN `acid` VARCHA
 		COMMIT;
     END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_als_teacher` (IN `tid` VARCHAR(250), IN `act_code` VARCHAR(250), IN `dist` INT, IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `eml` VARCHAR(50), IN `usn` VARCHAR(50), IN `pass` VARCHAR(300), IN `id_loc` TEXT)  BEGIN
+CREATE  PROCEDURE `insert_als_teacher` (IN `tid` VARCHAR(250), IN `act_code` VARCHAR(250), IN `dist` INT, IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `eml` VARCHAR(50), IN `usn` VARCHAR(50), IN `pass` VARCHAR(300), IN `id_loc` TEXT)  BEGIN
         START TRANSACTION;
 			INSERT INTO `teacher`(`user_id`, `is_evaluated`,`activation_code`, `isActivated`,`email`, `is_email_activated`, `username`, `password`) 
             VALUES 
@@ -77,7 +77,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_als_teacher` (IN `tid` VARCH
 		COMMIT;
     END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_coord` (IN `cid` VARCHAR(250), IN `act_code` VARCHAR(50), IN `dist` INT, IN `brgy` TEXT, IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `eml` VARCHAR(50), IN `usn` VARCHAR(50), IN `pass` VARCHAR(300), IN `id_loc` TEXT)  BEGIN
+CREATE  PROCEDURE `insert_coord` (IN `cid` VARCHAR(250), IN `act_code` VARCHAR(50), IN `dist` INT, IN `brgy` TEXT, IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `eml` VARCHAR(50), IN `usn` VARCHAR(50), IN `pass` VARCHAR(300), IN `id_loc` TEXT)  BEGIN
         START TRANSACTION;
 			INSERT INTO `user`(`user_id`, `is_evaluated`, `activation_code`, `isActivated`, `email`, `is_email_activated`,`username`, `password`, `user_type`) VALUES (cid, 0,act_code, 0, eml, 1, usn, pass, 'Coordinator');
             INSERT INTO `contact`(`user_id`, `barangay`, `district`, `email`) VALUES (cid, brgy, dist, eml);
@@ -87,7 +87,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_coord` (IN `cid` VARCHAR(250
 		COMMIT;
     END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_staff` (IN `cid` VARCHAR(250), IN `act_code` VARCHAR(50), IN `dist` INT, IN `brgy` TEXT, IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `eml` VARCHAR(50), IN `usn` VARCHAR(50), IN `pass` VARCHAR(300), IN `id_loc` TEXT)  BEGIN
+CREATE  PROCEDURE `insert_staff` (IN `cid` VARCHAR(250), IN `act_code` VARCHAR(50), IN `dist` INT, IN `brgy` TEXT, IN `ln` VARCHAR(30), IN `fn` VARCHAR(30), IN `eml` VARCHAR(50), IN `usn` VARCHAR(50), IN `pass` VARCHAR(300), IN `id_loc` TEXT)  BEGIN
         START TRANSACTION;
 			INSERT INTO `user`(`user_id`, `is_evaluated`, `activation_code`, `isActivated`, `email`, `is_email_activated`,`username`, `password`, `user_type`) VALUES (cid, 0,act_code, 0, eml, 1, usn, pass, 'Staff');
             INSERT INTO `contact`(`user_id`, `barangay`, `district`, `email`) VALUES (cid, brgy, dist, eml);
@@ -97,7 +97,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_staff` (IN `cid` VARCHAR(250
 		COMMIT;
     END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `migrate_oscya` (IN `o_id` VARCHAR(20), IN `s_id` VARCHAR(20), IN `t_id` VARCHAR(20), IN `fname` VARCHAR(255), IN `age` INT(11), IN `bday` DATE, IN `sex` VARCHAR(10), IN `c_status` VARCHAR(10), IN `st` VARCHAR(255), IN `brgy` VARCHAR(255), IN `dist` VARCHAR(255), IN `rel` VARCHAR(50), IN `gfname` VARCHAR(60), IN `gcontact` VARCHAR(16), IN `e_attainment` VARCHAR(255), IN `rs` TEXT, IN `ispwd` TINYINT(1), IN `ds_ability` TEXT, IN `hpwdid` TINYINT(1), IN `isemp` TINYINT(1), IN `isfps` TINYINT(1), IN `isin` TINYINT(1), IN `map_date` DATE, IN `cs_date` DATE)  BEGIN
+CREATE  PROCEDURE `migrate_oscya` (IN `o_id` VARCHAR(20), IN `s_id` VARCHAR(20), IN `t_id` VARCHAR(20), IN `fname` VARCHAR(255), IN `age` INT(11), IN `bday` DATE, IN `sex` VARCHAR(10), IN `c_status` VARCHAR(10), IN `st` VARCHAR(255), IN `brgy` VARCHAR(255), IN `dist` VARCHAR(255), IN `rel` VARCHAR(50), IN `gfname` VARCHAR(60), IN `gcontact` VARCHAR(16), IN `e_attainment` VARCHAR(255), IN `rs` TEXT, IN `ispwd` TINYINT(1), IN `ds_ability` TEXT, IN `hpwdid` TINYINT(1), IN `isemp` TINYINT(1), IN `isfps` TINYINT(1), IN `isin` TINYINT(1), IN `map_date` DATE, IN `cs_date` DATE)  BEGIN
 	START TRANSACTION;
 		INSERT INTO `oscya_info`(`oscya_id`, `fullname`,`birthdate`, `age`, `gender`, `civil_status`, `religion`) VALUES ( o_id, fname, bday, age, sex, c_status, rel);
                 
